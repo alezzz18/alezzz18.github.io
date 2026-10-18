@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alejandro Gutiérrez · Desarrollador Full Stack</title>
+  <meta name="description" content="Portafolio de Alejandro Gutiérrez, desarrollador Full Stack. Páginas web, aplicaciones web y móviles a la medida de tu marca con Laravel, Django, Odoo, Node.js, Next.js, SvelteKit, PostgreSQL y MySQL.">
+  <meta name="author" content="Alejandro Gutiérrez">
+  <meta name="theme-color" content="#F3F5F8">
+
+  <!-- Vista previa al compartir el enlace (Instagram, WhatsApp, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alejandro Gutiérrez · Desarrollador Full Stack">
+  <meta property="og:description" content="Páginas web, aplicaciones web y móviles a la medida de tu negocio y tu marca.">
+  <meta property="og:url" content="https://alezzz18.github.io/">
+  <meta property="og:locale" content="es_VE">
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Aplica el tema antes de pintar la página para evitar parpadeos -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
+      var theme;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.dataset.theme = theme;
+    })();
+  </script>
+</head>
+<body>
+  <!-- Iconos SVG reutilizables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+    <symbol id="i-app" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24"><path d="M12 22a10 10 0 1 1 10-10c0 2.5-2 3.5-4 3.5h-2a2 2 0 0 0-1.5 3.3A2 2 0 0 1 12 22Z"/><circle cx="7.5" cy="11" r="1" fill="currentColor"/><circle cx="10.5" cy="7" r="1" fill="currentColor"/><circle cx="15.5" cy="7.5" r="1" fill="currentColor"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="7" rx="2"/><rect x="3" y="14" width="18" height="7" rx="2"/><path d="M7 6.5h.01M7 17.5h.01"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5Z"/><path d="m3 8 9 5 9-5M12 13v8"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></symbol>
+    <symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7Z"/><path d="M12 22V12M21 7l-9 5-9-5"/></symbol>
+    <symbol id="i-tools" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M6 8.5v7M8.5 18h7M18 15.5V11a3 3 0 0 0-3-3h-4"/><path d="m13 6-2 2 2 2"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2.5 9 2.5 12 0v-5"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#inicio">Saltar al contenido</a>
+
+  <!-- ===== Navegación ===== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="logo" href="#inicio" aria-label="Alejandro Gutiérrez, inicio">
+        <span class="logo-bracket">&lt;</span>AG<span class="logo-bracket"> /&gt;</span>
+      </a>
+
+      <nav class="site-nav" id="siteNav" aria-label="Principal">
+        <ul>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#tecnologias">Tecnologías</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema">
+          <svg class="icon icon-moon"><use href="#i-moon"/></svg>
+          <svg class="icon icon-sun"><use href="#i-sun"/></svg>
+        </button>
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="siteNav">
+          <svg class="icon icon-open"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close"><use href="#i-close"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section class="hero" id="inicio">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="dots"></span>
+      </div>
+
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="badge reveal"><span class="pulse"></span>Disponible para nuevos proyectos</p>
+          <p class="hero-hello reveal" style="--d:1">Hola, soy</p>
+          <h1 class="hero-title reveal" style="--d:2">Alejandro <span class="text-accent">Gutiérrez</span></h1>
+          <p class="hero-role reveal" style="--d:3" aria-label="Desarrollador Full Stack">
+            <span class="mono prompt" aria-hidden="true">&gt;</span>
+            <span id="typed" aria-hidden="true">Desarrollador Full Stack</span><span class="caret" aria-hidden="true"></span>
+          </p>
+          <p class="hero-desc reveal" style="--d:4">
+            Desarrollo páginas web, aplicaciones web y móviles a la medida de tu negocio,
+            alineadas con la identidad visual y la paleta de colores de tu marca.
+          </p>
+          <div class="hero-actions reveal" style="--d:5">
+            <a class="btn btn-primary" href="#proyectos">
+              Ver proyectos <svg class="icon"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="https://wa.me/584121350170?text=Hola%20Alejandro%2C%20vi%20tu%20portafolio%20y%20me%20interesa%20un%20proyecto." target="_blank" rel="noopener">
+              <svg class="icon"><use href="#i-chat"/></svg> Escríbeme
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" style="--d:3" aria-hidden="true">
+          <div class="code-card">
+            <div class="code-bar">
+              <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              <span class="code-file">alejandro.ts</span>
+            </div>
+<pre class="code"><code><span class="k">const</span> <span class="v">alejandro</span> = {
+  <span class="p">rol</span>: <span class="s">"Full Stack Developer"</span>,
+  <span class="p">edad</span>: <span class="n">20</span>,
+  <span class="p">titulo</span>: <span class="s">"TSU en Informática"</span>,
+  <span class="p">backend</span>: [<span class="s">"Laravel"</span>, <span class="s">"Django"</span>, <span class="s">"Node.js"</span>],
+  <span class="p">erp</span>: <span class="s">"Odoo"</span>,
+  <span class="p">frontend</span>: [<span class="s">"Next.js"</span>, <span class="s">"SvelteKit"</span>],
+  <span class="p">db</span>: [<span class="s">"PostgreSQL"</span>, <span class="s">"MySQL"</span>],
+  <span class="p">disponible</span>: <span class="k">true</span>,
+};<span class="code-caret"></span></code></pre>
+          </div>
+          <span class="float-chip chip-1">Laravel</span>
+          <span class="float-chip chip-2">Next.js</span>
+          <span class="float-chip chip-3">SvelteKit</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Sobre mí ===== -->
+    <section class="section" id="sobre-mi">
+      <div class="container about">
+        <div class="about-text">
+          <div class="section-head reveal">
+            <span class="eyebrow">01 · Sobre mí</span>
+            <h2>Convierto ideas en productos digitales</h2>
+          </div>
+          <p class="reveal">
+            Tengo 20 años y soy <strong>Técnico Superior Universitario (TSU) en Informática</strong>.
+            Me apasiona construir cosas que la gente use: desde una página para tu negocio
+            hasta un sistema completo con backend y base de datos.
+          </p>
+          <p class="reveal">
+            Trabajo con <strong>PHP y Laravel</strong>, <strong>Python con Django y Odoo</strong>,
+            <strong>JavaScript con Node.js</strong>, <strong>Next.js con TypeScript</strong> y <strong>SvelteKit</strong>,
+            sobre bases de datos <strong>PostgreSQL</strong> y <strong>MySQL</strong>. Además tengo bases
+            sólidas de programación orientada a objetos con <strong>Java</strong>.
+          </p>
+        </div>
+
+        <ul class="stats">
+          <li class="stat reveal" style="--d:1"><strong>20</strong><span>años</span></li>
+          <li class="stat reveal" style="--d:2"><strong>TSU</strong><span>en Informática</span></li>
+          <li class="stat reveal" style="--d:3"><strong>Full Stack</strong><span>Frontend + Backend</span></li>
+          <li class="stat reveal" style="--d:4"><strong>100%</strong><span>Responsive</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Servicios ===== -->
+    <section class="section section-alt" id="servicios">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">02 · Servicios</span>
+          <h2>Lo que puedo hacer por ti</h2>
+          <p>Soluciones a la medida, desde una página sencilla hasta un sistema completo.</p>
+        </div>
+
+        <div class="grid grid-4">
+          <article class="card service reveal" style="--d:1">
+            <span class="card-icon"><svg class="icon"><use href="#i-monitor"/></svg></span>
+            <h3>Páginas web</h3>
+            <p>Landing pages y sitios para negocios, emprendimientos y marcas personales.</p>
+          </article>
+          <article class="card service reveal" style="--d:2">
+            <span class="card-icon"><svg class="icon"><use href="#i-app"/></svg></span>
+            <h3>Aplicaciones web</h3>
+            <p>Sistemas a medida con panel administrativo, usuarios, reportes y base de datos.</p>
+          </article>
+          <article class="card service reveal" style="--d:3">
+            <span class="card-icon"><svg class="icon"><use href="#i-phone"/></svg></span>
+            <h3>Apps móviles</h3>
+            <p>Aplicaciones para celular, intuitivas y conectadas a tu propio backend.</p>
+          </article>
+          <article class="card service reveal" style="--d:4">
+            <span class="card-icon"><svg class="icon"><use href="#i-palette"/></svg></span>
+            <h3>Diseño a tu marca</h3>
+            <p>Interfaces adaptadas a tus colores, logo y estilo, que se ven bien en cualquier pantalla.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Tecnologías ===== -->
+    <section class="section" id="tecnologias">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">03 · Tecnologías</span>
+          <h2>Mi stack de trabajo</h2>
+          <p>Las herramientas con las que construyo cada proyecto.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card skill reveal" style="--d:1">
+            <header><span class="card-icon"><svg class="icon"><use href="#i-server"/></svg></span><h3>Backend</h3></header>
+            <p>APIs, lógica de negocio y paneles administrativos.</p>
+            <ul class="chips"><li>PHP</li><li>Laravel</li><li>Python</li><li>Django</li><li>Node.js</li></ul>
+          </article>
+          <article class="card skill reveal" style="--d:2">
+            <header><span class="card-icon"><svg class="icon"><use href="#i-layout"/></svg></span><h3>Frontend</h3></header>
+            <p>Interfaces modernas, rápidas y tipadas.</p>
+            <ul class="chips"><li>Next.js</li><li>SvelteKit</li><li>TypeScript</li><li>JavaScript</li><li>HTML</li><li>CSS</li></ul>
+          </article>
+          <article class="card skill reveal" style="--d:3">
+            <header><span class="card-icon"><svg class="icon"><use href="#i-box"/></svg></span><h3>ERP</h3></header>
+            <p>Módulos y personalización para gestión empresarial.</p>
+            <ul class="chips"><li>Odoo</li><li>Python</li></ul>
+          </article>
+          <article class="card skill reveal" style="--d:1">
+            <header><span class="card-icon"><svg class="icon"><use href="#i-db"/></svg></span><h3>Bases de datos</h3></header>
+            <p>Modelado relacional y consultas eficientes.</p>
+            <ul class="chips"><li>PostgreSQL</li><li>MySQL</li></ul>
+          </article>
+          <article class="card skill reveal" style="--d:2">
+            <header><span class="card-icon"><svg class="icon"><use href="#i-cube"/></svg></span><h3>POO con Java</h3></header>
+            <p>Código ordenado, reutilizable y fácil de mantener.</p>
+            <ul class="chips"><li>Clases</li><li>Herencia</li><li>Polimorfismo</li></ul>
+          </article>
+          <article class="card skill reveal" style="--d:3">
+            <header><span class="card-icon"><svg class="icon"><use href="#i-tools"/></svg></span><h3>Herramientas</h3></header>
+            <p>Control de versiones y flujo de trabajo profesional.</p>
+            <ul class="chips"><li>Git</li><li>GitHub</li><li>VS Code</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Proyectos ===== -->
+    <section class="section section-alt" id="proyectos">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">04 · Proyectos</span>
+          <h2>Lo que construyo</h2>
+          <p>Páginas web, aplicaciones web y apps móviles hechas a la medida.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <!-- Página web -->
+          <article class="card project reveal" style="--d:1">
+            <div class="mock mock-browser" aria-hidden="true">
+              <div class="mb-window">
+                <div class="mb-bar"><i></i><i></i><i></i><span class="mb-url">alezzz18.github.io</span></div>
+                <div class="mb-page">
+                  <div class="mb-nav"><b></b><span></span><span></span><span></span></div>
+                  <div class="mb-hero"><b class="l1"></b><b class="l2"></b><b class="cta"></b></div>
+                  <div class="mb-cards"><span></span><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="tag">Página web</span>
+              <h3>Este portafolio</h3>
+              <p>Sitio de una sola página, rápido, adaptable a celular y PC, con animaciones suaves.</p>
+              <ul class="chips"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+              <div class="project-links">
+                <a href="https://github.com/alezzz18/alezzz18.github.io" target="_blank" rel="noopener">
+                  <svg class="icon"><use href="#i-github"/></svg> Ver código
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Aplicación web -->
+          <article class="card project reveal" style="--d:2">
+            <div class="mock mock-dash" aria-hidden="true">
+              <div class="md-window">
+                <div class="md-side"><b></b><span></span><span></span><span></span><span></span></div>
+                <div class="md-main">
+                  <div class="md-kpis"><span></span><span></span><span></span></div>
+                  <div class="md-chart">
+                    <i style="--h:45%;--i:0"></i><i style="--h:70%;--i:1"></i><i style="--h:55%;--i:2"></i>
+                    <i style="--h:85%;--i:3"></i><i style="--h:60%;--i:4"></i><i style="--h:95%;--i:5"></i>
+                    <i style="--h:75%;--i:6"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="tag">Aplicación web</span>
+              <h3>Sistemas y paneles administrativos</h3>
+              <p>Inventarios, ventas, usuarios y reportes, con backend robusto y base de datos relacional.</p>
+              <ul class="chips"><li>Laravel</li><li>Django</li><li>Odoo</li><li>Node.js</li><li>PostgreSQL</li><li>MySQL</li></ul>
+              <div class="project-links">
+                <a href="https://wa.me/584121350170?text=Hola%20Alejandro%2C%20me%20interesa%20una%20aplicaci%C3%B3n%20web." target="_blank" rel="noopener">
+                  <svg class="icon"><use href="#i-chat"/></svg> Cotiza la tuya
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- App móvil -->
+          <article class="card project reveal" style="--d:3">
+            <div class="mock mock-phone" aria-hidden="true">
+              <div class="mp-phone">
+                <div class="mp-notch"></div>
+                <div class="mp-head"><b></b><span></span></div>
+                <div class="mp-list"><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span></div>
+                <div class="mp-tab"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="tag">App móvil</span>
+              <h3>Aplicaciones móviles</h3>
+              <p>Apps rápidas e intuitivas para tu negocio, conectadas a tu propio servidor y datos.</p>
+              <ul class="chips"><li>UI móvil</li><li>API REST</li><li>TypeScript</li></ul>
+              <div class="project-links">
+                <a href="https://wa.me/584121350170?text=Hola%20Alejandro%2C%20me%20interesa%20una%20app%20m%C3%B3vil." target="_blank" rel="noopener">
+                  <svg class="icon"><use href="#i-chat"/></svg> Cotiza la tuya
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Proceso ===== -->
+    <section class="section" id="proceso">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">05 · Proceso</span>
+          <h2>Cómo trabajamos juntos</h2>
+        </div>
+        <ol class="steps">
+          <li class="step reveal" style="--d:1"><span class="step-num">01</span><h3>Idea</h3><p>Me cuentas qué necesitas y definimos el alcance.</p></li>
+          <li class="step reveal" style="--d:2"><span class="step-num">02</span><h3>Diseño</h3><p>Adaptamos la interfaz a tu marca y paleta de colores.</p></li>
+          <li class="step reveal" style="--d:3"><span class="step-num">03</span><h3>Desarrollo</h3><p>Construyo el proyecto y te muestro avances.</p></li>
+          <li class="step reveal" style="--d:4"><span class="step-num">04</span><h3>Entrega</h3><p>Lo publicamos y te acompaño con los ajustes.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Contacto ===== -->
+    <section class="section" id="contacto">
+      <div class="container">
+        <div class="contact reveal">
+          <span class="eyebrow">06 · Contacto</span>
+          <h2>¿Tienes una idea? <span class="text-accent">Hagámosla realidad.</span></h2>
+          <p>Escríbeme y conversamos sobre tu proyecto sin compromiso.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary btn-lg" href="https://wa.me/584121350170?text=Hola%20Alejandro%2C%20vi%20tu%20portafolio%20y%20me%20interesa%20un%20proyecto." target="_blank" rel="noopener">
+              <svg class="icon"><use href="#i-chat"/></svg> WhatsApp
+            </a>
+            <a class="btn btn-ghost btn-lg" href="https://instagram.com/ale_zzz18" target="_blank" rel="noopener">
+              <svg class="icon"><use href="#i-instagram"/></svg> Instagram
+            </a>
+            <a class="btn btn-ghost btn-lg" href="https://github.com/alezzz18" target="_blank" rel="noopener">
+              <svg class="icon"><use href="#i-github"/></svg> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Alejandro Gutiérrez · Hecho con código y café ☕</p>
+      <a class="icon-btn" href="#inicio" aria-label="Volver arriba"><svg class="icon"><use href="#i-up"/></svg></a>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
