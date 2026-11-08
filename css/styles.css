@@ -623,6 +623,13 @@ button { font: inherit; color: inherit; }
 .mb-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
 .mb-cards span { height: 26px; border-radius: 6px; background: var(--mock-line); }
 
+/* Tarjeta ancha: ocupa toda la fila y pone la imagen al lado del texto */
+@media (min-width: 640px) {
+  .project-wide { grid-column: 1 / -1; flex-direction: row; }
+  .project-wide .mock { flex: 0 0 46%; aspect-ratio: auto; min-height: 240px; border-bottom: 0; border-right: 1px solid var(--border); }
+  .project-wide .project-body { justify-content: center; }
+}
+
 /* Captura real de un proyecto */
 .shot {
   aspect-ratio: 16 / 10;
