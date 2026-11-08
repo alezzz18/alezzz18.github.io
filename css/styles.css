@@ -705,7 +705,7 @@ button { font: inherit; color: inherit; }
 /* ---------- Responsive ---------- */
 @media (min-width: 640px) {
   .container { padding-inline: 24px; }
-  .grid-4, .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4, .grid-3, .grid-projects { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .stats { gap: 16px; }
   .chip-3 { display: block; }
