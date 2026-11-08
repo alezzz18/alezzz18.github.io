@@ -557,7 +557,7 @@ button { font: inherit; color: inherit; }
 
 /* Mockups dibujados con CSS */
 .mock {
-  height: 210px;
+  aspect-ratio: 16 / 10;
   display: grid;
   place-items: center;
   padding: 22px;
@@ -623,102 +623,22 @@ button { font: inherit; color: inherit; }
 .mb-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
 .mb-cards span { height: 26px; border-radius: 6px; background: var(--mock-line); }
 
-/* Mock: dashboard con gráfica animada */
-.md-window {
-  width: 100%;
-  max-width: 300px;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 54px 1fr;
-  border-radius: 12px;
+/* Captura real de un proyecto */
+.shot {
+  aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  transition: transform .45s var(--ease);
-}
-.project:hover .md-window { transform: scale(1.04); }
-.md-side { padding: 12px 10px; display: grid; align-content: start; gap: 9px; background: var(--surface-2); border-right: 1px solid var(--border); }
-.md-side b { height: 10px; border-radius: 4px; background: var(--accent); margin-bottom: 6px; }
-.md-side span { height: 5px; border-radius: 3px; background: var(--mock-line); }
-.md-main { padding: 12px; display: grid; grid-template-rows: auto 1fr; gap: 10px; }
-.md-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-.md-kpis span { height: 22px; border-radius: 6px; background: var(--surface-2); border: 1px solid var(--border); }
-.md-kpis span:first-child { background: var(--accent-soft); border-color: transparent; }
-.md-chart {
-  display: flex;
-  align-items: flex-end;
-  gap: 6px;
-  padding: 8px;
-  border-radius: 8px;
   background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
 }
-.md-chart i {
-  flex: 1;
-  height: var(--h);
-  border-radius: 4px 4px 2px 2px;
-  background: linear-gradient(to top, var(--accent), color-mix(in srgb, var(--accent) 45%, transparent));
-  transform-origin: bottom;
-  animation: grow 3.2s var(--ease) infinite alternate;
-  animation-delay: calc(var(--i) * .12s);
+.shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform .5s var(--ease);
 }
-@keyframes grow {
-  0%, 15% { transform: scaleY(.35); }
-  85%, 100% { transform: scaleY(1); }
-}
-
-/* Mock: teléfono */
-.mock-phone { padding-bottom: 0; align-items: end; }
-.mp-phone {
-  position: relative;
-  width: 118px;
-  height: 188px;
-  padding: 22px 10px 0;
-  border-radius: 22px 22px 0 0;
-  border: 5px solid #1F242B;
-  border-bottom: 0;
-  background: var(--surface);
-  box-shadow: var(--shadow-lg);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transition: transform .45s var(--ease);
-}
-.project:hover .mp-phone { transform: translateY(-6px); }
-.mp-notch { position: absolute; top: 6px; left: 50%; width: 34px; height: 7px; border-radius: 4px; background: #1F242B; transform: translateX(-50%); }
-.mp-head { display: grid; gap: 5px; }
-.mp-head b { width: 60%; height: 7px; border-radius: 4px; background: rgba(120, 132, 148, .55); }
-.mp-head span { width: 40%; height: 5px; border-radius: 3px; background: var(--mock-line); }
-.mp-list { display: grid; gap: 7px; }
-.mp-list span {
-  height: 24px;
-  border-radius: 7px;
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  position: relative;
-  animation: slideIn 4s var(--ease) infinite;
-  animation-delay: calc(var(--i) * .2s);
-}
-.mp-list span::before {
-  content: "";
-  position: absolute;
-  left: 6px;
-  top: 50%;
-  width: 12px;
-  height: 12px;
-  border-radius: 4px;
-  background: var(--accent);
-  transform: translateY(-50%);
-  opacity: .8;
-}
-@keyframes slideIn {
-  0% { opacity: 0; transform: translateX(14px); }
-  15%, 80% { opacity: 1; transform: none; }
-  100% { opacity: 0; transform: translateX(-6px); }
-}
-.mp-tab { margin-top: auto; display: flex; justify-content: space-around; padding: 8px 0; border-top: 1px solid var(--border); }
-.mp-tab i { width: 12px; height: 12px; border-radius: 4px; background: var(--mock-line); }
-.mp-tab i:first-child { background: var(--accent); }
+.project:hover .shot img { transform: scale(1.04); }
 
 /* ---------- Proceso ---------- */
 .steps { display: grid; gap: 18px; counter-reset: step; }
